@@ -1,0 +1,7 @@
+PG_NAME="postgresql-server"
+
+docker run -it --name ${PG_NAME} --net-alias=${PG_NAME}\
+       --net=arcgis.net \
+       -p 5433:5432
+       -v `pwd`/data:/home/arcgis/postgres/9.5/data \
+       geoceg/postgresql-server
